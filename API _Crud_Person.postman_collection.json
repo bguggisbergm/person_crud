@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "ffcc666d-74cd-4eb0-8f14-dbbe14993e1c",
+		"name": "API _Crud_Person",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12313706"
+	},
+	"item": [
+		{
+			"name": "GET /persons- Consult all People",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /persons/{id} - Consult by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/persons/66cf69490cf11db279167d4e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons",
+						"66cf69490cf11db279167d4e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /persons - Create New Person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Juan\",\r\n  \"lastName\": \"Garcia\",\r\n  \"nationality\": \"Chilean\",\r\n  \"year\": 1996,\r\n  \"works\": [\r\n    {\r\n      \"company\": \"Go Go  Music\",\r\n      \"initContract\": \"2022-01-01\",\r\n      \"finishContract\": \"2023-05-01\",\r\n      \"position\": \"Artist\"\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/persons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /persons/ - Update person",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"_id\": \"66cf69490cf11db279167d4e\",\r\n        \"name\": \"Joaquin\",\r\n        \"lastName\": \"Salva\",\r\n        \"works\": [\r\n            {\r\n                \"company\": \"Yogu Yogu\",\r\n                \"initContract\": \"2020-01-01T00:00:00.000Z\",\r\n                \"finishContract\": \"2021-01-01T00:00:00.000Z\",\r\n                \"position\": \"FullStacker\",\r\n                \"_id\": \"66ccfb2e25274aa947d6dcb7\"\r\n            },\r\n            {\r\n                \"company\": \"SQM\",\r\n                \"initContract\": \"2022-02-01T00:00:00.000Z\",\r\n                \"finishContract\": \"2023-02-01T00:00:00.000Z\",\r\n                \"position\": \"Web Senior\",\r\n                \"_id\": \"66cd005c25274aa947d6dcde\"\r\n            }\r\n        ],\r\n        \"nationality\": \"Chilean\",\r\n        \"year\": 1993\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/persons/66cf69490cf11db279167d4e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons",
+						"66cf69490cf11db279167d4e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /persons/ - Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/persons/66cf68e30cf11db279167d47",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons",
+						"66cf68e30cf11db279167d47"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /persons/ - List all works",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/persons/66cf6366ddfcee0c3d3857d6/works",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons",
+						"66cf6366ddfcee0c3d3857d6",
+						"works"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /persons/ - Add works",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"company\": \"HBO\",\r\n  \"initContract\": \"2022-02-01\",\r\n  \"finishContract\": \"2021-02-01\",\r\n  \"position\": \"Manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/persons/66cd079eb3b29cdf9e9cc6c2/works",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons",
+						"66cd079eb3b29cdf9e9cc6c2",
+						"works"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /persons/ - update works",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"position\": \"Dancer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/persons/66cd079eb3b29cdf9e9cc6c2/works/66cd0915b3b29cdf9e9cc6cd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons",
+						"66cd079eb3b29cdf9e9cc6c2",
+						"works",
+						"66cd0915b3b29cdf9e9cc6cd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /persons/ - Delete work",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/persons/66cf6366ddfcee0c3d3857d6/works/66cd005c25274aa947d6dcde",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"persons",
+						"66cf6366ddfcee0c3d3857d6",
+						"works",
+						"66cd005c25274aa947d6dcde"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
